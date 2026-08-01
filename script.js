@@ -1,0 +1,4 @@
+const menuBtn=document.querySelector('.hamb');const menu=document.querySelector('.menu');if(menuBtn){menuBtn.addEventListener('click',()=>menu.classList.toggle('open'))}
+document.querySelectorAll('.menu a').forEach(a=>a.addEventListener('click',()=>menu?.classList.remove('open')));
+const bt=document.querySelector('.backtop');window.addEventListener('scroll',()=>{if(bt)bt.style.display=window.scrollY>500?'block':'none'});bt?.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+const form=document.querySelector('#contactForm');form?.addEventListener('submit',e=>{e.preventDefault();const name=form.querySelector('[name=name]').value.trim();const topic=form.querySelector('[name=topic]').value;const msg=form.querySelector('[name=message]').value.trim();const text=encodeURIComponent(`Merhaba, ben ${name}. Başvuru konusu: ${topic}. ${msg}`);window.open(`https://wa.me/905454717579?text=${text}`,'_blank')});
