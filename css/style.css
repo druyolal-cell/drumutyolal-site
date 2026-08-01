@@ -126,6 +126,12 @@ img.hero-img{object-fit:cover;width:100%}
 .rating-summary p{font-size:.85rem;color:var(--muted);margin-top:.2rem}
 .rating-summary .stars{color:#e0a63c;letter-spacing:.1em}
 
+/* WhatsApp formu */
+.btn-wa{background:#25d366;display:inline-flex;align-items:center;gap:.5rem}
+.btn-wa::before{content:'💬'}
+.btn-wa:hover{background:#1da851}
+.form-note{font-size:.8rem;color:var(--muted);margin-top:.7rem}
+
 /* deneyim zaman çizelgesi */
 .timeline{list-style:none;border-left:2px solid var(--accent);margin:1.2rem 0 0 .5rem;padding-left:1.5rem}
 .timeline li{position:relative;margin-bottom:1.1rem;font-size:.93rem}
