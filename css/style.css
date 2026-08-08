@@ -24,7 +24,8 @@ nav ul{list-style:none;display:flex;gap:.2rem}
 nav li{position:relative}
 nav a{display:block;padding:.6rem .9rem;font-size:.93rem;font-weight:500;color:var(--text);border-radius:8px}
 nav a:hover{background:var(--bg-soft);color:var(--primary-dark)}
-.dropdown{position:absolute;top:100%;left:0;background:var(--white);min-width:250px;border-radius:12px;box-shadow:var(--shadow);opacity:0;visibility:hidden;transform:translateY(8px);transition:.2s;padding:.5rem}
+.dropdown{position:absolute;top:100%;left:auto;right:0;background:var(--white);border-radius:12px;box-shadow:var(--shadow);opacity:0;visibility:hidden;transform:translateY(8px);transition:.2s;padding:1rem;display:grid;grid-template-columns:repeat(3,minmax(215px,1fr));gap:.3rem 1.2rem}
+.cat-col{display:flex;flex-direction:column}
 nav li:hover>.dropdown{opacity:1;visibility:visible;transform:translateY(0)}
 .dropdown a{padding:.5rem .8rem;font-size:.88rem}
 .dropdown .cat{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:.6rem .8rem .2rem;font-weight:600}
@@ -109,8 +110,8 @@ footer a:hover{color:#fff}
   nav{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;box-shadow:var(--shadow);max-height:75vh;overflow-y:auto}
   nav.open{display:block}
   nav ul{flex-direction:column;padding:1rem}
-  .dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;display:none;padding-left:1rem}
-  nav li.open .dropdown{display:block}
+  .dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;display:none;padding:0 0 0 1rem;grid-template-columns:1fr}
+  nav li.open .dropdown{display:grid}
   .hero h1{font-size:2rem}
 }
 img.hero-img{object-fit:cover;width:100%}
