@@ -94,6 +94,9 @@ footer li{margin-bottom:.45rem}
 footer a{color:#e9dbe2;font-size:.88rem}
 footer a:hover{color:#fff}
 .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.15);padding-top:1.2rem;font-size:.78rem;opacity:.85;line-height:1.6}
+.editor-info{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.15);margin-top:.5rem;padding-top:1.2rem;display:flex;flex-wrap:wrap;gap:.4rem 2.5rem;font-size:.8rem}
+.editor-info .lbl{display:block;font-size:.68rem;letter-spacing:.09em;text-transform:uppercase;opacity:.6;margin-bottom:.15rem}
+.editor-info a{text-decoration:underline}
 .socials a{display:inline-block;margin:0 .8rem .5rem 0;font-size:.88rem}
 
 /* floating buttons */
