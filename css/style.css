@@ -117,15 +117,19 @@ footer a:hover{color:#fff}
 img.hero-img{object-fit:cover;width:100%}
 @media(max-width:600px){article img[style*='float']{float:none!important;width:100%!important;margin:0 0 1.2rem!important}}
 
-/* hasta görüşleri */
-.card.review .stars{color:#e0a63c;font-size:1.05rem;letter-spacing:.1em;margin-bottom:.6rem}
-.card.review p{font-style:italic;color:var(--text);font-size:.92rem}
-.card.review .who{display:block;margin-top:.9rem;font-size:.8rem;font-weight:600;color:var(--muted)}
+/* bilgilendirme kartları */
+.card.info-card{cursor:default}
+.card.info-card:hover{transform:none}
+.card.info-card h3{font-size:1.05rem;margin-bottom:.7rem}
+.card.info-card p{font-size:.89rem;line-height:1.75}
 
-.rating-summary{display:flex;align-items:center;justify-content:center;gap:1.5rem;background:var(--white);border-radius:16px;box-shadow:var(--shadow);padding:1.3rem 2rem;max-width:520px;margin:0 auto 2rem}
-.rating-summary .big{font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:var(--primary-dark);line-height:1}
-.rating-summary p{font-size:.85rem;color:var(--muted);margin-top:.2rem}
-.rating-summary .stars{color:#e0a63c;letter-spacing:.1em}
+/* görsel galerisi */
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:.9rem;margin:0 0 1rem}
+.gallery figure{margin:0;border-radius:14px;overflow:hidden;box-shadow:var(--shadow);background:var(--bg-soft)}
+.gallery img{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;transition:transform .4s}
+.gallery figure:hover img{transform:scale(1.04)}
+.gallery-caption{font-size:.82rem;color:var(--muted);text-align:center;margin-bottom:2rem!important;font-style:italic}
+@media(max-width:600px){.gallery{grid-template-columns:1fr}}
 
 /* ana sayfa kategori başlıkları */
 .cat-heading{font-size:1.15rem;color:var(--primary-dark);margin:2.4rem 0 1.1rem;padding-bottom:.5rem;border-bottom:2px solid var(--accent);display:flex;align-items:center;gap:.6rem}
