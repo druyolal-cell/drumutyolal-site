@@ -164,3 +164,6 @@ details summary::-webkit-details-marker{display:none}
 details summary::after{content:'+';position:absolute;right:1.3rem;font-size:1.3rem;color:var(--accent);line-height:1}
 details[open] summary::after{content:'–'}
 details p{padding:0 1.3rem 1.2rem;font-size:.9rem;color:var(--muted)}
+
+.sss-cat{font-size:1rem;color:var(--primary-dark);margin:2rem 0 .9rem;letter-spacing:.02em;padding-bottom:.4rem;border-bottom:1px solid var(--accent)}
+.sss-cat:first-child{margin-top:0}
