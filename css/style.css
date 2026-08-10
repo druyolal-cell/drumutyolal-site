@@ -140,6 +140,11 @@ img.hero-img{object-fit:cover;width:100%}
 .cat-heading:first-of-type{margin-top:.5rem}
 .grid+.cat-heading{margin-top:2.6rem}
 
+/* KVKK onay kutusu */
+.consent{display:flex;gap:.6rem;align-items:flex-start;font-size:.82rem;color:var(--muted);margin:.2rem 0 1rem;cursor:pointer;line-height:1.6}
+.consent input{width:auto;margin-top:.25rem;flex:0 0 auto;accent-color:var(--primary)}
+.consent a{text-decoration:underline}
+
 /* WhatsApp formu */
 .btn-wa{background:#25d366;display:inline-flex;align-items:center;gap:.5rem}
 .btn-wa::before{content:'💬'}

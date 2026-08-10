@@ -16,7 +16,9 @@ document.addEventListener('DOMContentLoaded',function(){
       e.preventDefault();
       var g=function(n){var el=f.querySelector('[name="'+n+'"]');return el?el.value.trim():'';};
       var ad=g('ad_soyad'), tel=g('telefon'), konu=g('konu'), mesaj=g('mesaj');
+      var ok=f.querySelector('[name="onay"]');
       if(!ad||!tel){alert('Lütfen ad soyad ve telefon bilgilerinizi giriniz.');return;}
+      if(ok&&!ok.checked){alert('Devam etmek için KVKK Aydınlatma Metni onayını işaretlemeniz gerekir.');return;}
       var t='Merhaba, web siteniz üzerinden yazıyorum.\n\n';
       t+='Ad Soyad: '+ad+'\nTelefon: '+tel;
       if(konu) t+='\nKonu: '+konu;
