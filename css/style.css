@@ -167,3 +167,6 @@ details p{padding:0 1.3rem 1.2rem;font-size:.9rem;color:var(--muted)}
 
 .sss-cat{font-size:1rem;color:var(--primary-dark);margin:2rem 0 .9rem;letter-spacing:.02em;padding-bottom:.4rem;border-bottom:1px solid var(--accent)}
 .sss-cat:first-child{margin-top:0}
+
+.aydinlatma-notu{font-size:.8rem;color:var(--muted);line-height:1.6;margin:.2rem 0 .8rem}
+.aydinlatma-notu a{text-decoration:underline}
