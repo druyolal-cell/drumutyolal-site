@@ -19,9 +19,9 @@ a{color:var(--primary);text-decoration:none}
 header{position:sticky;top:0;z-index:100;background:var(--white);box-shadow:0 2px 12px rgba(0,0,0,.06)}
 .nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0}
 .logo{display:block;line-height:0}
-.logo img{display:block;width:auto;height:52px;max-width:100%}
-@media(max-width:900px){.logo img{height:42px}}
-@media(max-width:420px){.logo img{height:34px}}
+.logo img{display:block;width:auto;height:64px;max-width:100%}
+@media(max-width:900px){.logo img{height:50px}}
+@media(max-width:420px){.logo img{height:40px}}
 
 nav ul{list-style:none;display:flex;gap:.2rem}
 nav li{position:relative}
