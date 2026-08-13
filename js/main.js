@@ -1,7 +1,7 @@
 
 document.addEventListener('DOMContentLoaded',function(){
   var h=document.querySelector('.hamburger'),n=document.querySelector('nav');
-  if(h){h.addEventListener('click',function(){n.classList.toggle('open');});}
+  if(h){h.addEventListener('click',function(){var o=n.classList.toggle('open');h.setAttribute('aria-expanded',o?'true':'false');h.setAttribute('aria-label',o?'Menüyü kapat':'Menüyü aç');});}
   document.querySelectorAll('nav li').forEach(function(li){
     var dd=li.querySelector('.dropdown');
     if(dd){li.querySelector('a').addEventListener('click',function(e){
