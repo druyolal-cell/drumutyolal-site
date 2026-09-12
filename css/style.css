@@ -177,3 +177,10 @@ details p{padding:0 1.3rem 1.2rem;font-size:.9rem;color:var(--muted)}
 .skip-link{position:absolute;left:-9999px;top:0;background:var(--primary-dark);color:#fff;padding:.7rem 1.2rem;z-index:999;border-radius:0 0 8px 0}
 .skip-link:focus{left:0}
 a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+/* makale içi listeler */
+article ul{margin:0 0 1.2rem 1.3rem;padding:0}
+article ul li{margin-bottom:.6rem;line-height:1.75}
+article ul li::marker{color:var(--primary)}
+article details{margin-bottom:.6rem}
+article details p{padding:0 1.3rem 1.1rem}
