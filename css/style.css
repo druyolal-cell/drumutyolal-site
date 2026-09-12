@@ -1,8 +1,8 @@
 
 :root{
-  --primary:#dc397a; --primary-dark:#a81b54; --btn:#c62868; --accent:#f0c2d6;
-  --bg:#fffdfe; --bg-soft:#fdf2f7; --text:#3a3138; --muted:#7a6b72;
-  --white:#ffffff; --shadow:0 6px 24px rgba(168,27,84,.10);
+  --primary:#a53a8f; --primary-dark:#7d2168; --btn:#8f2a79; --accent:#eec4e2;
+  --bg:#fffcfe; --bg-soft:#fbf0f8; --text:#3a3138; --muted:#7a6b72;
+  --white:#ffffff; --shadow:0 6px 24px rgba(125,33,104,.10);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -81,7 +81,7 @@ article p{margin-bottom:1.1rem}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
 form .field{margin-bottom:1rem}
 form label{display:block;font-size:.85rem;font-weight:600;margin-bottom:.3rem;color:var(--primary-dark)}
-form input,form textarea{width:100%;padding:.75rem 1rem;border:1px solid #edd3de;border-radius:10px;font-family:inherit;font-size:.95rem;background:#fff}
+form input,form textarea{width:100%;padding:.75rem 1rem;border:1px solid #ead3e4;border-radius:10px;font-family:inherit;font-size:.95rem;background:#fff}
 form input:focus,form textarea:focus{outline:2px solid var(--accent)}
 .info-item{display:flex;gap:.9rem;margin-bottom:1.3rem;align-items:flex-start}
 .info-item .ico{font-size:1.3rem}
