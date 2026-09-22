@@ -179,3 +179,9 @@ article ul li{margin-bottom:.6rem;line-height:1.75}
 article ul li::marker{color:var(--primary)}
 article details{margin-bottom:.6rem}
 article details p{padding:0 1.3rem 1.1rem}
+
+/* hakkimda gorsel */
+.hakkimda-gorsel{float:right;width:300px;margin:.25rem 0 1.25rem 1.75rem}
+.hakkimda-gorsel img{display:block;width:100%;height:auto;border-radius:16px;box-shadow:var(--shadow)}
+.hakkimda-gorsel figcaption{margin-top:.5rem;font-size:.85rem;color:var(--muted);text-align:center;line-height:1.4}
+@media(max-width:700px){.hakkimda-gorsel{float:none;width:100%;max-width:420px;margin:0 auto 1.5rem}}
