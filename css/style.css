@@ -186,6 +186,5 @@ article details p{padding:0 1.3rem 1.1rem}
 .hakkimda-gorsel figcaption{margin-top:.5rem;font-size:.85rem;color:var(--muted);text-align:center;line-height:1.4}
 @media(max-width:700px){.hakkimda-gorsel{float:none;width:100%;max-width:420px;margin:0 auto 1.5rem}}
 
-/* ozgecmis bolumu gorseli - yatay oran */
+/* ozgecmis bolumu gorseli */
 .about-grid picture{display:block}
-.about-grid picture .hero-img{aspect-ratio:auto;height:auto;display:block;width:100%}
