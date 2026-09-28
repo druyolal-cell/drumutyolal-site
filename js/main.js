@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded',function(){
   function updateConsent(granted){
     window.gtag('consent','update',{
       analytics_storage:granted?'granted':'denied',
-      ad_storage:'denied',
+      ad_storage:granted?'granted':'denied',
       ad_user_data:'denied',
       ad_personalization:'denied'
     });
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded',function(){
     notice.setAttribute('role','dialog');
     notice.setAttribute('aria-label','Çerez tercihleri');
     notice.style.cssText='position:fixed;left:1rem;right:1rem;bottom:1rem;z-index:9999;max-width:760px;margin:auto;padding:1rem 1.1rem;background:#fff;color:#222;border:1px solid #ddd;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.18);font:14px/1.45 Inter,Arial,sans-serif';
-    notice.innerHTML='<div style="margin-bottom:.75rem">Site kullanımını anlamak için anonimleştirilmiş analiz çerezleri kullanmak istiyoruz. Reddetmeniz siteyi kullanmanızı engellemez. <a href="/kvkk" style="color:#a51955">KVKK metni</a></div><div style="display:flex;gap:.6rem;justify-content:flex-end"><button type="button" data-consent="denied" style="padding:.55rem .9rem;border:1px solid #bbb;border-radius:8px;background:#fff;cursor:pointer">Reddet</button><button type="button" data-consent="granted" style="padding:.55rem .9rem;border:0;border-radius:8px;background:#a51955;color:#fff;cursor:pointer">Kabul et</button></div>';
+    notice.innerHTML='<div style="margin-bottom:.75rem">Site kullanımını ve reklamlarımızın performansını ölçmek için analiz ve reklam ölçüm çerezleri kullanmak istiyoruz. Bu izin reklam kişiselleştirmesi için kullanılmaz. Reddetmeniz siteyi kullanmanızı engellemez. <a href="/kvkk" style="color:#a51955">KVKK metni</a></div><div style="display:flex;gap:.6rem;justify-content:flex-end"><button type="button" data-consent="denied" style="padding:.55rem .9rem;border:1px solid #bbb;border-radius:8px;background:#fff;cursor:pointer">Reddet</button><button type="button" data-consent="granted" style="padding:.55rem .9rem;border:0;border-radius:8px;background:#a51955;color:#fff;cursor:pointer">Kabul et</button></div>';
     document.body.appendChild(notice);
     notice.addEventListener('click',function(e){
       var button=e.target.closest('[data-consent]');
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded',function(){
     var link=e.target.closest('a[href]');
     if(!link)return;
     var href=link.getAttribute('href')||'';
-    if(/^https:\/\/(wa\.me|api\.whatsapp\.com)\//i.test(href)){
+    if(href.indexOf('https://wa.me/')===0||href.indexOf('https://api.whatsapp.com/')===0){
       window.trackContact('whatsapp_click','whatsapp');
     }else if(/^tel:/i.test(href)){
       window.trackContact('phone_click','phone');
@@ -105,10 +105,10 @@ document.addEventListener('DOMContentLoaded',function(){
       var ok=f.querySelector('[name="onay"]');
       if(!ad||!tel){alert('Lütfen ad soyad ve telefon bilgilerinizi giriniz.');return;}
       if(ok&&!ok.checked){alert('Devam etmek için özel nitelikli kişisel verilerin işlenmesine ilişkin açık rıza onayını işaretlemeniz gerekir.');return;}
-      var t='Merhaba, web siteniz üzerinden yazıyorum.\\n\\n';
-      t+='Ad Soyad: '+ad+'\\nTelefon: '+tel;
-      if(konu) t+='\\nKonu: '+konu;
-      if(mesaj) t+='\\n\\nMesaj: '+mesaj;
+      var t='Merhaba, web siteniz üzerinden yazıyorum.\n\n';
+      t+='Ad Soyad: '+ad+'\nTelefon: '+tel;
+      if(konu) t+='\nKonu: '+konu;
+      if(mesaj) t+='\n\nMesaj: '+mesaj;
       window.trackContact('whatsapp_form_submit','whatsapp_form');
       window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(t),'_blank');
     });
