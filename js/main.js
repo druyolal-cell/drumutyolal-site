@@ -16,6 +16,8 @@
     ad_personalization:'denied',
     wait_for_update:500
   });
+  // Onay verilmediğinde reklam tıklama kimliğini (gclid) sayfalar arasında URL ile taşı
+  window.gtag('set','url_passthrough',true);
   window.gtag('js',new Date());
   window.gtag('config',GA_ID,{anonymize_ip:true});
   window.gtag('config',ADS_ID);
@@ -51,7 +53,9 @@ document.addEventListener('DOMContentLoaded',function(){
     window.gtag('consent','update',{
       analytics_storage:granted?'granted':'denied',
       ad_storage:granted?'granted':'denied',
-      ad_user_data:'denied',
+      // Reklam ölçümü için gerekli; yalnızca ziyaretçi "Kabul et" dediğinde verilir
+      ad_user_data:granted?'granted':'denied',
+      // Kişiselleştirilmiş reklam her zaman kapalı (çerez metnindeki taahhüt)
       ad_personalization:'denied'
     });
   }
