@@ -190,3 +190,23 @@ article details p{padding:0 1.3rem 1.1rem}
 .about-grid picture{display:block}
 .ozgecmis-img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain;
   border-radius:20px;box-shadow:var(--shadow)}
+
+
+/* Mobil iletişim: mevcut telefon ve WhatsApp bağlantılarını görünür tutar. */
+.hero-actions{display:flex;flex-wrap:wrap;gap:.6rem;margin:0 0 1.5rem}
+.mobile-contact-bar{display:none}
+@media(max-width:900px){
+  body:has(.mobile-contact-bar){padding-bottom:calc(80px + env(safe-area-inset-bottom,0px))}
+  .mobile-contact-bar{position:fixed;left:0;right:0;bottom:0;z-index:101;
+    display:grid;grid-template-columns:1fr 1fr;gap:.75rem;
+    padding:.65rem max(1rem,env(safe-area-inset-right,0px)) calc(.65rem + env(safe-area-inset-bottom,0px)) max(1rem,env(safe-area-inset-left,0px));
+    background:var(--white);border-top:1px solid var(--accent);box-shadow:0 -4px 18px rgba(125,33,104,.10)}
+  .mobile-contact-bar a{display:flex;align-items:center;justify-content:center;min-height:48px;
+    padding:.65rem 1rem;border-radius:999px;font-weight:600;font-size:.95rem;color:#fff;line-height:1.5}
+  .mobile-contact-call{background:var(--btn)}
+  .mobile-contact-whatsapp{background:#146c43}
+  .mobile-contact-call:hover{background:var(--primary-dark)}
+  .mobile-contact-whatsapp:hover{background:#105735}
+  body:has(.mobile-contact-bar) [aria-label="Çerez tercihleri"]{bottom:calc(90px + env(safe-area-inset-bottom,0px))!important;max-height:calc(100dvh - 120px);overflow-y:auto}
+  .hero{padding-top:2rem}
+}
