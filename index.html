@@ -424,7 +424,11 @@
     </div>
     <form class="wa-form">
       <div class="field"><label>Ad Soyad *</label><input type="text" name="ad_soyad" required></div>
-      <div class="field"><label>Telefon *</label><input type="tel" name="telefon" required></div>
+      <div class="field"><label for="randevu-telefon">Telefon *</label>
+        <input id="randevu-telefon" type="tel" name="telefon" autocomplete="tel" inputmode="tel" maxlength="32" aria-describedby="telefon-yardim telefon-hata" required>
+        <p id="telefon-yardim" class="form-note">Türkiye: 05xx xxx xx xx. Yurt dışı: +ülke kodu ve numara.</p>
+        <p id="telefon-hata" class="form-note" style="color:#a01936" role="status" hidden></p>
+      </div>
       <div class="field"><label>Konu</label><input type="text" name="konu" placeholder="Örn. gebelik takibi, randevu"></div>
       <div class="field"><label>Mesajınız</label><textarea name="mesaj" rows="4"></textarea></div>
       <p class="aydinlatma-notu">Kişisel verilerinizin nasıl işlendiğini
@@ -467,10 +471,11 @@
   hekim muayenesinin ya da konsültasyonunun yerini alamaz. Bu bilgilerden yola çıkarak tedaviye başlanması veya mevcut
   tedavinin değiştirilmesi önerilmez. © 2026 Op. Dr. Umut Yolal — Tüm hakları saklıdır.</div>
 </div></footer>
-<script src="js/main.js?v=20261026a"></script>
+<script src="js/main.js?v=20261103-phone"></script>
 <div class="mobile-contact-bar" role="group" aria-label="Hızlı iletişim">
   <a class="mobile-contact-call" href="tel:+905454717579">Ara</a>
   <a class="mobile-contact-whatsapp" href="https://wa.me/905454717579">WhatsApp</a>
 </div>
 </body>
 </html>
+

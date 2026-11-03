@@ -99,15 +99,64 @@ document.addEventListener('DOMContentLoaded',function(){
     });}
   });
 
+  // Numaranın biçimini kontrol eder; hattın aktif olduğunu doğrulamaz.
+  function normalizeContactPhone(value){
+    var raw=value.trim();
+    if(!raw||raw.length>32||!/^[+0-9\s()\-]+$/.test(raw))return '';
+    var number=raw.replace(/[\s()\-]/g,'');
+    if(number.indexOf('00')===0)number='+'+number.slice(2);
+    if(number.indexOf('+90')===0){
+      return /^\+90[2-589][0-9]{9}$/.test(number)?number:'';
+    }
+    if(number.charAt(0)==='+'){
+      return /^\+[1-9][0-9]{7,14}$/.test(number)?number:'';
+    }
+    if(number.charAt(0)==='0')number=number.slice(1);
+    return /^[2-589][0-9]{9}$/.test(number)?'+90'+number:'';
+  }
+
   // Formu WhatsApp mesajina donustur
   var WA = '905454717579';
   document.querySelectorAll('form.wa-form').forEach(function(f){
+    var phone=f.querySelector('[name="telefon"]');
+    var phoneFeedback=f.querySelector('[id="telefon-hata"]');
+    var phoneError=document.documentElement.lang==='en'
+      ?'Enter a 10-digit Turkish number (optional leading 0), or an international number with +country code.'
+      :'Türkiye numaranızı 10 haneli veya başında 0 ile girin. Yurt dışı için +ülke kodunu kullanın.';
+    function validatePhone(){
+      if(!phone)return true;
+      var valid=!!normalizeContactPhone(phone.value);
+      phone.setCustomValidity(phone.value&&!valid?phoneError:'');
+      phone.setAttribute('aria-invalid',phone.value&&!valid?'true':'false');
+      if(phoneFeedback){
+        phoneFeedback.textContent=phone.value&&!valid?phoneError:'';
+        phoneFeedback.hidden=!phone.value||valid;
+      }
+      return valid;
+    }
+    if(phone){
+      phone.setAttribute('autocomplete','tel');
+      phone.setAttribute('inputmode','tel');
+      phone.addEventListener('input',validatePhone);
+      phone.addEventListener('change',validatePhone);
+      f.addEventListener('reset',function(){
+        phone.setCustomValidity('');
+        phone.removeAttribute('aria-invalid');
+        if(phoneFeedback){phoneFeedback.textContent='';phoneFeedback.hidden=true;}
+      });
+    }
     f.addEventListener('submit',function(e){
       e.preventDefault();
       var g=function(n){var el=f.querySelector('[name="'+n+'"]');return el?el.value.trim():'';};
       var ad=g('ad_soyad'), tel=g('telefon'), konu=g('konu'), mesaj=g('mesaj');
       var ok=f.querySelector('[name="onay"]');
       if(!ad||!tel){alert('Lütfen ad soyad ve telefon bilgilerinizi giriniz.');return;}
+      if(!validatePhone()){
+        phone.reportValidity();
+        phone.focus();
+        return;
+      }
+      tel=normalizeContactPhone(tel);
       if(ok&&!ok.checked){alert('Devam etmek için özel nitelikli kişisel verilerin işlenmesine ilişkin açık rıza onayını işaretlemeniz gerekir.');return;}
       var t='Merhaba, web siteniz üzerinden yazıyorum.\n\n';
       t+='Ad Soyad: '+ad+'\nTelefon: '+tel;
@@ -118,3 +167,4 @@ document.addEventListener('DOMContentLoaded',function(){
     });
   });
 });
+
