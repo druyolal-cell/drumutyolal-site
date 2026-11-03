@@ -74,14 +74,14 @@
     <div>
       <h2 style="font-family:'Playfair Display',serif;color:var(--primary-dark);margin-bottom:1.5rem">Randevu Formu</h2>
       <form class="wa-form">
-        <div class="field"><label>Ad Soyad *</label><input type="text" name="ad_soyad" required></div>
+        <div class="field"><label for="randevu-ad_soyad">Ad Soyad *</label><input id="randevu-ad_soyad" type="text" name="ad_soyad" autocomplete="name" required></div>
         <div class="field"><label for="randevu-telefon">Telefon *</label>
         <input id="randevu-telefon" type="tel" name="telefon" autocomplete="tel" inputmode="tel" maxlength="32" aria-describedby="telefon-yardim telefon-hata" required>
         <p id="telefon-yardim" class="form-note">Türkiye: 05xx xxx xx xx. Yurt dışı: +ülke kodu ve numara.</p>
         <p id="telefon-hata" class="form-note" style="color:#a01936" role="status" hidden></p>
       </div>
-        <div class="field"><label>Konu</label><input type="text" name="konu" placeholder="Örn. gebelik takibi, randevu"></div>
-        <div class="field"><label>Mesajınız</label><textarea name="mesaj" rows="5"></textarea></div>
+        <div class="field"><label for="randevu-konu">Konu</label><input id="randevu-konu" type="text" name="konu" placeholder="Örn. gebelik takibi, randevu"></div>
+        <div class="field"><label for="randevu-mesaj">Mesajınız</label><textarea id="randevu-mesaj" name="mesaj" rows="5"></textarea></div>
           <p class="aydinlatma-notu">Kişisel verilerinizin nasıl işlendiğini
           <a href="/kvkk">KVKK Aydınlatma Metni</a> ve
           <a href="/acik-riza">Açık Rıza Metni</a> sayfalarından inceleyebilirsiniz.</p>
@@ -132,4 +132,5 @@
 </div>
 </body>
 </html>
+
 
