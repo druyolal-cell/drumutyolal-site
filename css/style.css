@@ -210,3 +210,13 @@ article details p{padding:0 1.3rem 1.1rem}
   body:has(.mobile-contact-bar) [aria-label="Çerez tercihleri"]{bottom:calc(90px + env(safe-area-inset-bottom,0px))!important;max-height:calc(100dvh - 120px);overflow-y:auto}
   .hero{padding-top:2rem}
 }
+
+.hero-specialty{font-size:1.18rem;font-weight:600}
+.hero-location{color:var(--muted);margin:.2rem 0 1.1rem}
+#randevu-bilgileri{scroll-margin-top:6rem}
+@media(max-width:900px){
+  .mobile-contact-bar:has(.mobile-contact-directions){grid-template-columns:.65fr 1fr 1.55fr;gap:.35rem}
+  .mobile-contact-bar:has(.mobile-contact-directions) a{padding:.5rem .25rem;font-size:.85rem;text-align:center}
+  .mobile-contact-directions{background:var(--primary-dark)}
+  .mobile-contact-appointments{background:var(--btn)}
+}
